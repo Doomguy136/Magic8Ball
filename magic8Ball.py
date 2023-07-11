@@ -1,14 +1,18 @@
 import random
+import sys
 
-file = open("magicAnswers.txt", "r")
-read = file.readlines()
-magic_answers = []
-for line in read:
-    if line[-1] == "\n":
-        magic_answers.append(line[:-1])
-    else:
-        magic_answers.append(line)
-    
+try:
+    file = open("magicAnswers.txt", "r")
+    read = file.readlines()
+    magic_answers = []
+    for line in read:
+        if line[-1] == "\n":
+            magic_answers.append(line[:-1])
+        else:
+            magic_answers.append(line)
+except FileNotFoundError:
+    print("Make sure you have the magicAnswers.txt in this folder!")
+    sys.exit()
 
 
 def main():

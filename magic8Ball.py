@@ -1,21 +1,17 @@
 import random
 import sys
 
-try:
-    file = open("magicAnswers.txt", "r")
-    read = file.readlines()
-    magic_answers = []
-    for line in read:
-        if line[-1] == "\n":
-            magic_answers.append(line[:-1])
-        else:
-            magic_answers.append(line)
-except FileNotFoundError:
-    print("Make sure you have the magicAnswers.txt in this folder!")
-    sys.exit()
+def getMagicAnswers():
+    try:
+        file = open("magicAnswers.txt", "r")
+        magicAnswers = file.readlines()
+    except FileNotFoundError:
+        print("Make sure you have the magicAnswers.txt in this folder!")
+        sys.exit()
+    return magicAnswers
 
 
-def main():
+def main(magicAnswers):
     user_input = str()
     while user_input != "q":
         print("Ask me a question! or (q)uit")
@@ -24,9 +20,10 @@ def main():
             print("Goodbye!")
             break
 
-        answer = random.choice(magic_answers)
+        answer = random.choice(magicAnswers)
         print(answer)
 
 
 if __name__ == "__main__":
-    main()
+    magicAnswers = getMagicAnswers()
+    main(magicAnswers)

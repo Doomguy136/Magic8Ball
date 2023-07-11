@@ -1,6 +1,7 @@
 import random
 import sys
 
+
 def getMagicAnswers():
     try:
         file = open("magicAnswers.txt", "r")

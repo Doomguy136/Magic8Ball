@@ -13,11 +13,11 @@ def getMagicAnswers():
 
 
 def main(magicAnswers):
-    user_input = str()
-    while user_input != "q":
+    userInput = str()
+    while userInput != "q":
         print("Ask me a question! or (q)uit")
-        user_input = input()
-        if user_input == "q":
+        userInput = input()
+        if userInput == "q":
             print("Goodbye!")
             break
 

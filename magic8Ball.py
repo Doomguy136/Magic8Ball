@@ -17,7 +17,7 @@ def main(magicAnswers):
     while userInput != "q":
         print("Ask me a question! or (q)uit")
         userInput = input()
-        if userInput == "q":
+        if userInput.lower() == "q":
             print("Goodbye!")
             break
 

@@ -1,5 +1,4 @@
 import random
-import sys
 
 
 def getMagicAnswers():
@@ -7,8 +6,22 @@ def getMagicAnswers():
         file = open("magicAnswers.txt", "r")
         magicAnswers = file.readlines()
     except FileNotFoundError:
-        print("Make sure you have the magicAnswers.txt in this folder!")
-        sys.exit()
+        print("magicAnswers not found, creating magicAnswers.txt in this directory")
+        backup = open("magicAnswers.txt", "w")
+        backup.write('''It is certain
+It is decidedly so
+Yes
+Reply hazy try again
+Ask again later
+Concentrate and ask again
+My reply is no
+Outlook not so good
+Very doubtful
+''')
+        backup.close()
+        backup = open("magicAnswers.txt", "r")
+        magicAnswers = backup.readlines()
+        return magicAnswers
     return magicAnswers
 
 

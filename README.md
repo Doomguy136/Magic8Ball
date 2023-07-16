@@ -7,6 +7,7 @@ Instructions:
 Download BOTH magic8Ball.py and magicAnswers.txt and make sure they're both in the same folder.
 
 To run, open your terminal from that folder and execute the magic8Ball.py 
+
 example: python magic8Ball.py (Windows) python3 magic8ball.py (Linux/Unix Based System)
 
 To add your own answers enter text in the magicAnswers.txt separated by a new line (an [enter] input)

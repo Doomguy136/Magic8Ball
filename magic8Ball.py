@@ -8,16 +8,7 @@ def getMagicAnswers():
     except FileNotFoundError:
         print("magicAnswers not found, creating magicAnswers.txt in this directory")
         backup = open("magicAnswers.txt", "w")
-        backup.write('''It is certain
-It is decidedly so
-Yes
-Reply hazy try again
-Ask again later
-Concentrate and ask again
-My reply is no
-Outlook not so good
-Very doubtful
-''')
+        backup.write(defaultAnswers)
         backup.close()
         backup = open("magicAnswers.txt", "r")
         magicAnswers = backup.readlines()
@@ -37,6 +28,17 @@ def main(magicAnswers):
         answer = random.choice(magicAnswers)
         print(answer)
 
+
+defaultAnswers = ('''It is certain
+It is decidedly so
+Yes
+Reply hazy try again
+Ask again later
+Concentrate and ask again
+My reply is no
+Outlook not so good
+Very doubtful
+''')
 
 if __name__ == "__main__":
     magicAnswers = getMagicAnswers()

@@ -5,6 +5,7 @@ def getMagicAnswers():
     try:
         file = open("magicAnswers.txt", "r")
         magicAnswers = file.readlines()
+        file.close()
     except FileNotFoundError:
         print("magicAnswers not found, creating magicAnswers.txt in this directory")
         backup = open("magicAnswers.txt", "w")
@@ -41,5 +42,5 @@ Very doubtful
 ''')
 
 if __name__ == "__main__":
-    magicAnswers = getMagicAnswers()
-    main(magicAnswers)
+    answers = getMagicAnswers()
+    main(answers)
